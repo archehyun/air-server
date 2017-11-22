@@ -1,4 +1,4 @@
-package com.air.control;
+package com.air.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,7 +15,7 @@ public class UserController {
 	@RequestMapping(value = "/user")	
 	String home()
 	{		
-		service.insert();
+		service.select();
 		System.out.println("user");
 		return "user";
 	}

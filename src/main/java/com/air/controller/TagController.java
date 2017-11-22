@@ -1,4 +1,4 @@
-package com.air.control;
+package com.air.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
