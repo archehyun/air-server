@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>사용자 관리 페이지</title>
+				<link rel="stylesheet"
+		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"
+		th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
+		/>
+		<link rel="stylesheet"
+		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"
+		th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap-theme.min.css}"
+		/>		
+	</head>
+	<body>
+		사용자 관리 샘플 페이지
+		<br/>
+		<a th:href="@{/tagManage}">태그관리</a> 
+		<a th:href="@{/user}">사용자관리</a>
+		<a th:href="@{/location}">위치관리</a>	
+		<p th:text = "${name}"></p>
+				<table class="table-striped table-bordered table-condensed">
+			<tr>
+				<td>TID</td>
+				<td>Battery</td>
+				<td>UpdateTime</td>
+			</tr>
+			<tr th:each="user : ${users}">
+			
+				<td th:text="${user.user_name}"/>
+				<td th:text="${user.user_id}"/>				
+				
+				<td>
+					<form th:action="@{/user/delete}" method="post">
+						<input type = "submit" value ="삭제"/>
+						<input type = "hidden" name="id"  th:value="${user.user_id}"/>
+					</form>					
+				</td>				
+			</tr>
+		</table>
+		
+	</body>
+</html>

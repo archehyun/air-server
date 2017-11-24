@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmls:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>태그 관리 페이지</title>
+					<link rel="stylesheet"
+		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"
+		th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
+		/>
+		<link rel="stylesheet"
+		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"
+		th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap-theme.min.css}"
+		/>	
+	</head>
+	<body>
+		메인 페이지
+		<br/>
+		<br/>
+		<a th:href="@{/tagManage}">태그관리</a> 
+		<a th:href="@{/user}">사용자관리</a>		
+		<a th:href="@{/location}">위치관리</a>
+		
+		<table class="table-striped table-bordered table-condensed">
+			<tr>
+				<td>message</td>
+				
+				
+				<td>처리</td>
+			</tr>
+			<tr th:each="message : ${message}">
+							<td th:text="${message}"/>
+
+				
+							
+			</tr>
+		</table>
+		
+		
+		<footer>test1</footer>
+	</body>	
+</html>
