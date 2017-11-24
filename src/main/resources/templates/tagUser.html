@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmls:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>태그 관리 페이지</title>
+		<link rel="stylesheet"
+		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"
+		th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
+		/>
+		<link rel="stylesheet"
+		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"
+		th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap-theme.min.css}"
+		/>				
+	</head>
+	<body>
+		<div class="container">
+		태그 관리 샘플 페이지
+		<p th:text = "${name}"></p>
+		<table class="table-striped table-bordered table-condensed">
+			<tr>
+				<td>TID</td>
+				<td>Battery</td>
+				<td>UpdateTime</td>
+			</tr>
+			<tr th:each="tagUser : ${tagUsers}">
+			
+				<td th:text="${tagUser.tid}"/>
+				<td th:text="${tagUser.battery}"/>
+				<td th:text="${tagUser.user_id}"/>
+				
+				<td>
+					<form th:action="@{/tagManage/tagUserDelete}" method="post">
+						<input type = "submit" value ="삭제"/>
+						<input type = "hidden" name="id"  th:value="${tagUser.tid}"/>
+						<input type = "hidden" name="user"  th:value="${tagUser.user_id}"/>
+					</form>					
+				</td>				
+			</tr>
+		</table>
+		<footer>test1</footer>
+		</div>
+	</body>	
+</html>
