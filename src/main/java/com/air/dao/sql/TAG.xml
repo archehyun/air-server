@@ -19,6 +19,38 @@
 		select * from tb_tag
 		
 	</select>
+		<select id="selectTagUser" resultClass="com.air.domain.TagInfo" parameterClass="com.air.domain.TagInfo">
+		select * from tb_tag_user
+		<dynamic prepend="where">
+			<isNotNull prepend="and" property="tid">
+			tid=#tid#
+			</isNotNull>
+			<isNotNull prepend="and" property="user_id">	
+			user_id=#user_id#
+			</isNotNull>
+			<isNotNull prepend="and" property="is_activate">
+			is_activate=#is_activate#
+			</isNotNull>
+		</dynamic>
+	</select>
+	<delete id="delete" parameterClass="com.air.domain.TagInfo">
+	    	delete from tb_tag
+	    	<isNotNull prepend="where" property="tid"> 
+	    	tid=#tid#	
+	    	</isNotNull>
+	</delete>
+	
+		<delete id="deleteTagUser" parameterClass="com.air.domain.TagInfo">
+	    	delete from tb_tag_user
+	    	<dynamic prepend="where">
+	    	<isNotNull prepend="and" property="tid"> 
+	    	tid=#tid#	
+	    	</isNotNull>
+	    	<isNotNull prepend="and" property="user_id"> 
+	    	user_id=#user_id#	
+	    	</isNotNull>
+	    	</dynamic>
+	</delete>
 
 				
 </sqlMap>

@@ -6,15 +6,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.air.dao.UserDAO;
+import com.air.dao.LocationDAO;
 import com.air.domain.UserInfo;
 
 @Service
-public class UserService {
+public class LocationService {
 	
 	@Autowired
-	UserDAO dao;
-	
+	LocationDAO dao;
 	public void insert()
 	{
 		System.out.println("insert");
@@ -30,22 +29,12 @@ public class UserService {
 	public List select()
 	{
 		try {
-			List li = dao.select();
-			System.out.println("size:"+li.size());
-			return li;
+			return dao.select();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return null;
-	}
-	public void delete(String id) {
-		try {
-			dao.delete(id);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		return null;	
 	}
 
 }

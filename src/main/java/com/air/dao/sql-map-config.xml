@@ -43,6 +43,6 @@
 	
 	<sqlMap resource="com/air/dao/sql/USER.xml" />
 	<sqlMap resource="com/air/dao/sql/TAG.xml" />
-
+	<sqlMap resource="com/air/dao/sql/lOCATION.xml" />
 	
 </sqlMapConfig>

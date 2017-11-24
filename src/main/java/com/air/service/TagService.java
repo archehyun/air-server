@@ -19,9 +19,23 @@ public class TagService {
 	{
 		System.out.println("insert");
 	}
-	public void delete()
+	public void delete(String tid)
 	{
-		
+		try {
+			dao.delete(tid);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	public void deleteTagUser(String tid, String user_id)
+	{
+		try {
+			dao.deleteTagUser(tid,user_id);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	public void update(TagInfo info)
 	{
@@ -31,6 +45,16 @@ public class TagService {
 	{
 		try {
 			return dao.select();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	public List selectTagUser()
+	{
+		try {
+			return dao.selectTagUser();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

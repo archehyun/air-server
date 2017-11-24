@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import com.air.domain.UserInfo;
 import com.ibatis.sqlmap.client.SqlMapClient;
 
 @Repository
@@ -25,5 +26,12 @@ public class UserDAO {
 	}
 	
 	protected SqlMapClient sqlMap;
+
+	public int delete(String id) throws SQLException {
+		
+		UserInfo param = new UserInfo();
+		param.setUser_id(id);
+		return sqlMap.delete("tb_user.delete",param);
+	}
 
 }

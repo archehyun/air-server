@@ -28,6 +28,12 @@
 		</dynamic>
 		 -->
 	</select>
-		
+	<delete id="delete" parameterClass="com.air.domain.UserInfo">
+		delete from tb_user
+	    <isNotNull prepend="where" property="user_id"> 
+	    	user_id=#user_id#	
+	    </isNotNull>		
+	</delete>
+			
 				
 </sqlMap>

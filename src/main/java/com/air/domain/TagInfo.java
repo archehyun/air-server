@@ -3,7 +3,6 @@ package com.air.domain;
 import java.util.Date;
 
 public class TagInfo {
-	
 	private int battery;		// 배터리 잔량
 	private String is_activate;	// 액티베이션 여부
 	private int tag_interval; 	// 전송 주기
