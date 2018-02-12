@@ -10,14 +10,25 @@
 		<link rel="stylesheet"
 		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"
 		th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap-theme.min.css}"
-		/>		
+		/>	
+		<style type="text/css">
+			#header {
+				width: 800px; margin: 0 suto;
+				background:red;
+			}
+		</style>	
 	</head>
 	<body>
 		태그 관리 샘플 페이지
 		<br/>
-		<a th:href="@{/tagManage}">태그관리</a> 
-		<a th:href="@{/user}">사용자관리</a>	
+		<div align="center">
+		<div id="header">
+			<li><a th:href="@{/tagManage}">태그관리</a></li> 
+			<li><a th:href="@{/user}">사용자관리</a></li>
+		</div>
+			
 		<p th:text = "${name}"></p>
+		
 		<table class="table-striped table-bordered table-condensed">
 			<tr>
 				<td>TID</td>
@@ -40,5 +51,7 @@
 			</tr>
 		</table>
 		<footer>test1</footer>
+		</div>
+		
 	</body>	
 </html>

@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.air.core.TagManager;
 
-
+/*
+ * 
+ */
 
 
 @RestController
@@ -28,6 +30,7 @@ public class TagController {
 		System.out.println("send:"+body);
 		
 		tagManager.addMessage(body);
+		
 		return "redirect:/tagManage/tagUser";
 	}
 
