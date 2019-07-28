@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import com.air.dao.LocationDAO;
 import com.air.domain.UserInfo;
 
-@Service
 public class LocationService {
 	
 	@Autowired

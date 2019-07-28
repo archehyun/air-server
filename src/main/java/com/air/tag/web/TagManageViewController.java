@@ -12,7 +12,7 @@ import com.air.tag.service.TagService;
 @RequestMapping("tagManage")
 public class TagManageViewController {
 
-	@Autowired TagService service;
+	//@Autowired TagService service;
 
 	@RequestMapping(method= RequestMethod.GET) 
 	String home(Model model) {
