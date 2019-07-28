@@ -1,4 +1,4 @@
-package com.air.controller;
+package com.air.location.web;
 
 import java.util.List;
 

@@ -7,7 +7,6 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import com.air.domain.LocationInfo;
-import com.ibatis.sqlmap.client.SqlMapClient;
 
 @Repository
 public class LocationDAO {
