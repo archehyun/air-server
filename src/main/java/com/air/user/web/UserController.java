@@ -1,4 +1,4 @@
-package com.air.controller;
+package com.air.user.web;
 
 import java.util.List;
 
@@ -15,23 +15,16 @@ import com.air.service.UserService;
 @RequestMapping("user")	
 public class UserController {
 	
-	@Autowired
-	UserService service;
-	
-	@RequestMapping(method= RequestMethod.GET)
-	String home(Model model)
-	{
-		List li=service.select();
-		model.addAttribute("users",li);		
-		return "user";
-	}
-	
-	@RequestMapping(value="delete", method= RequestMethod.POST)	
-	String deleteTag(@RequestParam String id)
-	{
-		service.delete(id);
-		return "redirect:/user";
-	}
+	/*
+	 * @Autowired UserService service;
+	 * 
+	 * @RequestMapping(method= RequestMethod.GET) String home(Model model) { List
+	 * li=service.select(); model.addAttribute("users",li); return "user"; }
+	 * 
+	 * @RequestMapping(value="delete", method= RequestMethod.POST) String
+	 * deleteTag(@RequestParam String id) { service.delete(id); return
+	 * "redirect:/user"; }
+	 */
 
 
 }
