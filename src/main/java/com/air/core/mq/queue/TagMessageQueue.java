@@ -1,6 +1,4 @@
-package com.air.core;
-
-import com.air.core.mq.queue.DefaultQueue;
+package com.air.core.mq.queue;
 
 public class TagMessageQueue extends DefaultQueue{
 	

@@ -2,6 +2,8 @@ package com.air.core;
 
 import org.springframework.stereotype.Service;
 
+import com.air.core.mq.queue.TagMessageQueue;
+
 import mq.node.QueueNode;
 
 @Service

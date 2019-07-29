@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
+import com.air.core.mq.queue.TagMessageQueue;
+
 import mq.node.QueueNode;
 
 @Component
@@ -13,7 +15,6 @@ public class TagManager {
 	TagMessageQueue messageQueue = TagMessageQueue.getInstance();
 	
 	List<String> messageList;
-	
 	
 	public List<String> getMessageList() {
 		return messageList;
