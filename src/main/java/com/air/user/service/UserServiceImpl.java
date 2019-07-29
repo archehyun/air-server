@@ -1,4 +1,4 @@
-package com.air.service;
+package com.air.user.service;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -8,14 +8,18 @@ import org.springframework.stereotype.Service;
 
 import com.air.dao.UserDAO;
 import com.air.domain.UserInfo;
+import com.air.user.service.impl.UserService;
 
 @Service
-public class UserService {
+public class UserServiceImpl implements UserService{
+	
+	
+	public void insert() { System.out.println("insert"); }
 	
 	/*
 	 * @Autowired UserDAO dao;
 	 * 
-	 * public void insert() { System.out.println("insert"); } public void delete() {
+	 *  public void delete() {
 	 * 
 	 * } public void update(UserInfo info) {
 	 * 

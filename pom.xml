@@ -65,6 +65,16 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>mq</groupId>
+			<artifactId>mq-custom</artifactId>
+			<version>1.0.0</version>
+			<scope>system</scope> 
+			<systemPath>${project.basedir}/lib/mq.jar</systemPath>
+		</dependency>
+
+
+		
 	</dependencies>
 
 	<build>
