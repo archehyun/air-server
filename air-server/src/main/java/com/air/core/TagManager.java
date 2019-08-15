@@ -21,5 +21,4 @@ public class TagManager {
 	{
 		messageList.add(message);
 	}
-
 }

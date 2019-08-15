@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.air.dao.TagDAO;
 import com.air.domain.TagInfo;
+import com.air.mapper.TagMapper;
 
 @Service
 public class TagService {
@@ -21,21 +22,21 @@ public class TagService {
 	}
 	public void delete(String tid)
 	{
-		try {
+		/*try {
 			dao.delete(tid);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 	}
 	public void deleteTagUser(String tid, String user_id)
 	{
-		try {
+		/*try {
 			dao.deleteTagUser(tid,user_id);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 	}
 	public void update(TagInfo info)
 	{
@@ -51,14 +52,25 @@ public class TagService {
 		}
 		return null;
 	}
-	public List selectTagUser()
+	
+	public TagInfo selectTag(String tid)
 	{
 		try {
-			return dao.selectTagUser();
+			return dao.selectTag(tid);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return null;
+	}
+	public List selectTagUser()
+	{
+		/*try {
+			return dao.selectTagUser();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}*/
 		return null;
 	}
 }

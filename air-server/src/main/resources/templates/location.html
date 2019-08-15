@@ -10,54 +10,73 @@
 		<link rel="stylesheet"
 		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"
 		th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap-theme.min.css}"
-		/>		
+		/>
+		    <style>
+       #map {
+        height: 400px;
+        width: 100%;
+        	float: left;
+       }
+       #header{
+       	width: 1000px;
+       	margin: 0 auto;
+       	background: aqua;
+       }
+       #wrap{
+       	width:1000px;
+       	overflow: hidden;
+       }
+       #aside{
+       	width:200px;
+       	float: left;
+       }
+     	#content{
+       	width:800px;
+       	float: left;
+       }
+    </style>		
 	</head>
 	<body>
 		위치 정보 관리 샘플 페이지
 		<br/>
-		<a th:href="@{/tagManage}">태그관리</a> 
-		<a th:href="@{/user}">사용자관리</a>
-		<a th:href="@{/location}">위치관리</a>		
-		<p th:text = "${name}"></p>
-		<table class="table-striped table-bordered table-condensed">
-			<tr>
-				<td>code</td>
-				<td>Name</td>
-				<td>Direction</td>
-				<td>X1</td>
-				<td>Y1</td>
-				<td>X2</td>
-				<td>Y2</td>
-				<td>X3</td>
-				<td>Y3</td>
-				<td>X4</td>
-				<td>Y4</td>
+		<div id="header">
+			<a th:href="@{/tagManage}">태그관리</a> 
+			<a th:href="@{/user}">사용자관리</a>
+			<a th:href="@{/location}">위치관리</a>		
+			<p th:text = "${name}"></p>
+		</div>
+		<div id="wrap" align="center">
+		
+		<div id="aside">
+					<form>
+				<input type="text" name="search"/>
+				<input type="submit"/>
+			</form>
+			<table class="table-striped table-bordered table-condensed">
+				<tr>
+					<td>code</td>
+					<td>Name</td>
+					<td>Direction</td>
+					<td>X1</td>
+					<td>Y1</td>
+
+				</tr>
+				<tr th:each="location : ${locations}">
 				
-				<td>처리</td>
-			</tr>
-			<tr th:each="location : ${locations}">
+					<td th:text="${location.location_code}"/>
+					<td th:text="${location.location_name}"/>
+					<td th:text="${location.direction}"/>
+					<td th:text="${location.x1}"/>
+					<td th:text="${location.y1}"/>				
 			
-				<td th:text="${location.location_code}"/>
-				<td th:text="${location.location_name}"/>
-				<td th:text="${location.direction}"/>
-				<td th:text="${location.x1}"/>
-				<td th:text="${location.y1}"/>
-				<td th:text="${location.x2}"/>
-				<td th:text="${location.y2}"/>
-				<td th:text="${location.x3}"/>
-				<td th:text="${location.y3}"/>
-				<td th:text="${location.x4}"/>
-				<td th:text="${location.y4}"/>
-				<td th:text="${location.y1}"/>
-				
-				<td>
-					<form th:action="@{/location/delete}" method="post">
-						<input type = "submit" value ="삭제"/>
-						<input type = "hidden" name="id"  th:value="${location.location_code}"/>
-					</form>					
-				</td>				
-			</tr>
-		</table>
+				</tr>
+			</table>
+
+		</div>
+		
+		 
 		<footer>test1</footer>
+		</div>
+
 	</body>	
 </html>

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.air.service.LocationService;
 
+
 @Controller
 @RequestMapping("location")
 public class LocationController {
