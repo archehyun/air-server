@@ -8,21 +8,23 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.air.core.Listener;
+import com.air.core.ListenerImpl;
 import com.air.core.TagManager;
 
 @Controller
 @RequestMapping("/")
 public class MainController {
 	
+
 	@Autowired
-	TagManager manager;
+	Listener listener;
 	
 	@RequestMapping(method= RequestMethod.GET)
 	String home(Model model)
 	{				
-		
-		List li=manager.getMessageList();
-		model.addAttribute("message",li);		
+	/*	List li=manager.getMessageList();
+		model.addAttribute("message",li);	*/	
 		
 		return "index";
 	}
